@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtons.mblog.modules.mapper.PostMapper">
+
+    <select id="maxWeight" resultType="int">
+        select coalesce(max(weight), 0) from mto_post
+    </select>
+
+    <update id="updateViews">
+        update  mto_post set views = views + #{increment}
+        where id = #{id}
+    </update>
+
+    <update id="updateComments">
+        update  mto_post set comments = comments + #{increment}
+        where id = #{id}
+    </update>
+
+    <update id="updateFavors">
+        update  mto_post set favors = favors + #{increment}
+        where id = #{id}
+    </update>
+</mapper>

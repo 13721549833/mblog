@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtons.mblog.modules.mapper.UserMapper">
+
+    <update id="updatePosts">
+        update mto_user set posts = posts + #{increment} where id = #{id}
+    </update>
+
+    <update id="updateComments">
+        update mto_user set comments = comments + #{increment}
+        where id in
+        <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </update>
+</mapper>

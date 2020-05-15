@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtons.mblog.modules.mapper.ChannelMapper">
+
+    <select id="selectListByStatus" resultType="com.mtons.mblog.modules.pojo.Channel" parameterType="int">
+        SELECT id,name,key_,thumbnail,status,weight
+        FROM mto_channel
+        WHERE status = #{status}
+        ORDER BY weight DESC , id DESC
+    </select>
+
+    <select id="maxWeight" resultType="int">
+        select coalesce(max(weight), 0) from mto_channel
+    </select>
+</mapper>

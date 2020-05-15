@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mtons.mblog.modules.mapper.PostResourceMapper">
+
+    <insert id="insertBatch">
+        INSERT INTO mto_post_resource(path,post_id,resource_id,sort)
+        VALUES
+        <foreach collection="list" close="" index="index" item="item" open="" separator=",">
+            (#{item.path},#{item.postId},#{item.resourceId},#{item.sort})
+        </foreach>
+    </insert>
+</mapper>
