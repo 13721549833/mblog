@@ -18,7 +18,7 @@
 		<shiro.redis.version>2.4.2.1-RELEASE</shiro.redis.version>
 		<coobird.thumbnailator>0.4.8</coobird.thumbnailator>
 		<alibaba.fastjson>1.2.55</alibaba.fastjson>
-		<org.jsoup>1.9.2</org.jsoup>
+		<org.jsoup>1.15.3</org.jsoup>
 		<upyun.sdk.version>4.0.1</upyun.sdk.version>
 		<aliyun.sdk.version>2.8.3</aliyun.sdk.version>
 		<qiniu.sdk.version>7.2.18</qiniu.sdk.version>
